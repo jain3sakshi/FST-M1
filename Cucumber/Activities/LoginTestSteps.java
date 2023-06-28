@@ -18,7 +18,8 @@ public class LoginTestSteps {
     public void loginPage() {
         //Setup instances
         driver = new FirefoxDriver();
-        wait = new WebDriverWait(driver, 10);
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        new WebDriverWait(driver, Duration.ofSeconds(10));
 
         //Open browser
         driver.get("https://www.training-support.net/selenium/login-form");
