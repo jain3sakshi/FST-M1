@@ -19,7 +19,8 @@ public class GoogleSearchSteps {
     public void userIsOnGooglePage() throws Throwable {
         //Create a new instance of the Firefox driver
         driver = new FirefoxDriver();
-        wait = new WebDriverWait(driver, 15);
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        new WebDriverWait(driver, Duration.ofSeconds(15));
 
         //Open the browser
         driver.get("https://www.google.com");
